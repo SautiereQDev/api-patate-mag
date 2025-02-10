@@ -28,7 +28,7 @@ This the repo of my patate-mag web site's api, it respect the format of REST api
 ## Installation
 ```bash
 # Clone the repository
-git clone [https://github.com/yourusername/project-name.git](https://github.com/SautiereQDev/api-patate-mag.git)
+git clone https://github.com/SautiereQDev/api-patate-mag.git
 
 # Navigate to project directory
 cd api-patate-mag
