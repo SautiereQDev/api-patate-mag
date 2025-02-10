@@ -1,6 +1,6 @@
 import express from 'express';
-import { connectDB } from './database';
-import articleRoutes from './routes/articles';
+import { connectDB } from './database/index.ts';
+import articleRoutes from './routes/articles.ts';
 import cors from 'cors';
 
 const app = express();

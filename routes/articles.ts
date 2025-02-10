@@ -1,7 +1,7 @@
 import express from 'express';
 import { z } from 'zod';
-import { validateRequest } from '../middleware/validRequest';
-import ArticleController from "../controllers/ArticleController";
+import { validateRequest } from '../middleware/validRequest.ts';
+import ArticleController from "../controllers/ArticleController.ts";
 
 const router = express.Router();
 

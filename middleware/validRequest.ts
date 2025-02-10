@@ -1,4 +1,5 @@
-import { Request, Response, NextFunction } from 'express';
+import pkg from 'express';
+const { Request, Response, NextFunction } = pkg;
 import { ZodError, ZodSchema } from 'zod';
 
 export const validateRequest =

@@ -1,5 +1,6 @@
-import { Request, Response } from 'express';
-import {Article} from '../models/Article';
+import pkg from 'express';
+const { Request, Response } = pkg;
+import {Article} from '../models/Article.ts';
 
 export class ArticleController {
 	static async getAllArticles(_: any, res: Response): Promise<void> {
