@@ -1,0 +1,12 @@
+node_modules
+dist/**
+logs/**
+
+.vscode
+.idea
+.fleet
+
+.env
+.env.**!/.env.example
+
+/.env.production
