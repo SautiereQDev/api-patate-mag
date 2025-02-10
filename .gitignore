@@ -5,3 +5,8 @@ logs/**
 .vscode
 .idea
 .fleet
+
+.env
+.env.**!/.env.example
+
+/.env.production

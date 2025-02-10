@@ -4,10 +4,10 @@ import articleRoutes from './routes/articles';
 import cors from 'cors';
 
 const app = express();
-const PORT = process.env.PORT ?? 5000;
+const PORT = process.env.PORT ?? 3000;
 
 const corsOptions = {
-  origin: 'https://quentinsautiere.com', // Allow all origins
+  origin: process.env.NODE_ENV === 'development' ? `http://localhost:${process.env.PORT}` : 'https://quentinsautiere.com', // Allow all origins
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
   optionsSuccessStatus: 204,

@@ -1,7 +1,7 @@
 import express from 'express';
 import { z } from 'zod';
-import { Article } from '../models/Article';
 import { validateRequest } from '../middleware/validRequest';
+import ArticleController from "../controllers/ArticleController";
 
 const router = express.Router();
 
@@ -14,66 +14,18 @@ const articleSchema = z.object({
 });
 
 // Create a new article
-router.post('/', validateRequest(articleSchema), async (req, res) => {
-  try {
-    const article = new Article(req.body);
-    await article.save();
-    res.status(201).json(article);
-  } catch (error) {
-    console.error('Error creating trip:', error);
-    res.status(500).json({ error: 'Failed to create trip' });
-  }
-});
+router.post('/', validateRequest(articleSchema), ArticleController.createArticle);
 
 // Get all articles
-router.get('/', async (req, res) => {
-  try {
-    const articles = await Article.find();
-    res.status(200).json(articles);
-  } catch (error) {
-    res.status(500).json({ error: 'Failed to fetch articles' });
-  }
-});
+router.get('/', ArticleController.getAllArticles);
 
 // Get a single article by ID
-router.get('/:id', async (req, res) => {
-  try {
-    const article = await Article.findById(req.params.id);
-    if (!article) {
-      return res.status(404).json({ error: 'Article not found' });
-    }
-    res.status(200).json(article);
-  } catch (error) {
-    res.status(500).json({ error: 'Failed to fetch article' });
-  }
-});
+router.get('/:id', ArticleController.getArticleById);
 
 // Update an article by ID
-router.put('/:id', validateRequest(articleSchema), async (req, res) => {
-  try {
-    const article = await Article.findByIdAndUpdate(req.params.id, req.body, {
-      new: true,
-    });
-    if (!article) {
-      return res.status(404).json({ error: 'Article not found' });
-    }
-    res.status(200).json(article);
-  } catch (error) {
-    res.status(500).json({ error: 'Failed to update article' });
-  }
-});
+router.put('/:id', validateRequest(articleSchema), ArticleController.updateArticle);
 
 // Delete an article by ID
-router.delete('/:id', async (req, res) => {
-  try {
-    const article = await Article.findByIdAndDelete(req.params.id);
-    if (!article) {
-      return res.status(404).json({ error: 'Article not found' });
-    }
-    res.status(200).json({ message: 'Article deleted successfully' });
-  } catch (error) {
-    res.status(500).json({ error: 'Failed to delete article' });
-  }
-});
+router.delete('/:id', ArticleController.deleteArticle);
 
 export default router;
