@@ -47,7 +47,7 @@ npm run start
 Create a `.env` file in the root directory with the following variables:
 
 # Server Configuration
-PORT=3000
+PORT=3000    
 NODE_ENV=development
 
 # Database Configuration
@@ -131,6 +131,5 @@ limitations under the License.
 - Project Link: [[https://github.com/yourusername/project-name](https://github.com/yourusername/project-name)](https://github.com/yourusername/project-name)
 - My email : contact@quentinsautiere.com
 - My website : [quentinsautiere.com](https://quentinsautiere.com/)
-## Acknowledgments
 ---
 *Last updated: February 2025*
