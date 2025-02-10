@@ -46,7 +46,6 @@ npm run start
 ## Configuration
 Create a `.env` file in the root directory with the following variables:
 
-```plaintext
 # Server Configuration
 PORT=3000
 NODE_ENV=development
