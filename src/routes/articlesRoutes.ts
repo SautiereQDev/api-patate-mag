@@ -1,16 +1,18 @@
 import express from 'express';
 import { z } from 'zod';
-import { validateRequest } from '../middleware/validRequest.ts';
-import ArticleController from "../controllers/ArticleController.ts";
+// @ts-ignore
+import { validateRequest } from '../middlewares/validRequest.ts';
+// @ts-ignore
+import ArticleController from '../controllers/ArticleController.ts';
 
 const router = express.Router();
 
 const articleSchema = z.object({
-  title: z.string().min(3, 'Le titre est requis'),
-  excerpt: z.string().min(3, "L'extrait est requis"),
-  content: z.string().min(3, 'Le contenu est requis'),
-  image: z.string().url("L'URL de l'image doit être valide"),
-  author: z.string().min(3, "L'auteur est requis"),
+	title: z.string().min(3, 'Le titre est requis'),
+	excerpt: z.string().min(3, "L'extrait est requis"),
+	content: z.string().min(3, 'Le contenu est requis'),
+	image: z.string().url("L'URL de l'image doit être valide"),
+	author: z.string().min(3, "L'auteur est requis"),
 });
 
 // Create a new article

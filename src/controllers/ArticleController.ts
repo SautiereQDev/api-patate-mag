@@ -1,6 +1,6 @@
-import pkg from 'express';
-const { Request, Response } = pkg;
-import {Article} from '../models/Article.ts';
+import express from 'express';
+const { Request, Response } = express;
+import { Article } from '../models/Article.ts';
 
 export class ArticleController {
 	static async getAllArticles(_: any, res: Response): Promise<void> {
@@ -8,8 +8,9 @@ export class ArticleController {
 			const articles = await Article.find();
 			res.status(200).json(articles);
 		} catch (error) {
-			res.status(500).json({error: 'Failed to fetch articles'});
-		}}
+			res.status(500).json({ error: 'Failed to fetch articles' });
+		}
+	}
 	static async createArticle(req: Request, res: Response): Promise<void> {
 		try {
 			const article = new Article(req.body);
@@ -21,7 +22,7 @@ export class ArticleController {
 		}
 	}
 
-	static	async getArticleById(req: Request, res: Response): Promise<void> {
+	static async getArticleById(req: Request, res: Response): Promise<void> {
 		try {
 			const article = await Article.findById(req.params.id);
 			if (!article) {
