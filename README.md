@@ -23,7 +23,7 @@ This the repo of my patate-mag web site's api, it respect the format of REST api
 ## Tech Stack
 - express.js
 - mongoose (ODM)
-- multer
+- multer (form images upload)
 
 ## Installation
 ```bash
@@ -62,15 +62,16 @@ MONGODB_URI=<your link>
 | GET | `/patate-mag/:id` | Get article by ID |
 | POST | `/patate-mag` | Post article |
 | DELETE | `/patate-mag/:id` | Delete article |
+| POST | `/patate-mag/images/upload` | Upload and image |
 
 ## Database
 - MongoDB is used as the primary database
 - Connection is managed through Mongoose ODM
 - Database schemas are located in `/src/models`
+- Uploads images are located in `/upload`folder and are accessibles from `https://cdn.quentinsautiere.com/patate-mag/`
 
 ## Error Handling
 The API uses a centralized error handling mechanism:
-
 - Standard HTTP status codes are used
 
 ## Deployment
