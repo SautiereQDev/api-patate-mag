@@ -1,9 +1,7 @@
 import express from 'express';
 import { z } from 'zod';
-// @ts-ignore
-import { validateRequest } from '../middlewares/validRequest.ts';
-// @ts-ignore
-import ArticleController from '../controllers/ArticleController.ts';
+import { validateRequest } from '../middlewares/validRequest';
+import ArticleController from '../controllers/ArticleController';
 
 const router = express.Router();
 

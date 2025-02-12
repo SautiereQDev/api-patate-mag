@@ -1,5 +1,4 @@
-import express from 'express';
-const { Applicatiion, Request, Response, NextFunction } = express;
+import { Request, Response, NextFunction } from 'express';
 import { ZodError, ZodSchema } from 'zod';
 
 export const validateRequest =

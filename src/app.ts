@@ -1,7 +1,6 @@
-import express from 'express';
-const { Application, Request, Response, NextFunction } = express;
-import articleRoutes from './routes/articlesRoutes.ts';
-import imageRoutes from './routes/imagesRoutes.ts';
+import express, { Application, Request, Response, NextFunction } from 'express';
+import articleRoutes from './routes/articlesRoutes';
+import imageRoutes from './routes/imagesRoutes';
 import cors from 'cors';
 
 const app: Application = express();

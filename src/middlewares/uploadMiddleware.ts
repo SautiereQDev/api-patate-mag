@@ -1,8 +1,7 @@
 import multer from 'multer';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import express from 'express';
-const { Request } = express;
+import { Request } from 'express';
 
 // Configuration du stockage : ici, on enregistre les fichiers dans "uploads/"
 const storage = multer.diskStorage({

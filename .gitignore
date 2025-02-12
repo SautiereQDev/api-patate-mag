@@ -10,3 +10,6 @@ logs/**
 .env.**!/.env.example
 
 /.env.production
+
+# compiled files
+/src/**/*.js

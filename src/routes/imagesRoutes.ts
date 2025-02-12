@@ -1,7 +1,6 @@
-// File: src/routes/ImageRoutes.ts
 import { Router } from 'express';
-import { ImageController } from '../controllers/ImageController.ts';
-import { uploadMiddleware } from '../middlewares/uploadMiddleware.ts';
+import { ImageController } from '../controllers/ImageController';
+import { uploadMiddleware } from '../middlewares/uploadMiddleware';
 
 const router = Router();
 

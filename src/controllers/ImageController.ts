@@ -1,6 +1,5 @@
-import express from 'express';
-const { Request, Response, NextFunction } = express;
-import { ImageService } from '../services/imageService.ts';
+import { Request, Response, NextFunction } from 'express';
+import { ImageService } from '../services/imageService';
 
 export class ImageController {
 	public static async uploadImage(req: Request, res: Response, next: NextFunction) {
